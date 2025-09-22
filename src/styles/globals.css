@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #E04B0B;
+  --primary-hover: #C33C02;
+  --grey: #6D6D6D;
+  --subheader: #C33C02;
+}
+
+html, body {
+  @apply bg-black text-white;
+}
+
+.card-surface {
+  background: #6D6D6D26;
+  border: 1px solid #6D6D6D;
+  border-radius: 20px;
+  mix-blend-mode: difference;
+}
+
+.outlined {
+  @apply border border-white rounded-[10px] text-white;
+}
+
+
+/* --- Simple, tasteful animation for hero illustration --- */
+@keyframes float {
+  0%   { transform: translateY(0) rotate(0.2deg); }
+  50%  { transform: translateY(-8px) rotate(-0.2deg); }
+  100% { transform: translateY(0) rotate(0.2deg); }
+}
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 0px rgba(224, 75, 11, 0.7)); }
+  50%      { filter: drop-shadow(0 0 12px rgba(224, 75, 11, 0.9)); }
+}
+.float-anim { animation: float 6s ease-in-out infinite; will-change: transform; }
+.glow-anim  { animation: glow 3s ease-in-out infinite; }
+
+
+
+/* Radial orange glow for hero */
+.radial-glow {
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(60% 60% at 50% 50%, rgba(224,75,11,0.20) 0%, rgba(224,75,11,0.08) 35%, rgba(224,75,11,0.00) 70%);
+  pointer-events: none;
+  filter: blur(4px);
+}
